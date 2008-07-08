@@ -1,0 +1,20 @@
+inherit qt3
+
+HOMEPAGE="http://audacious-media-player.org/"
+SRC_URI="http://distfiles.atheme.org/${P}.tbz2"
+
+NO_ACLOCAL=1
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	lndirs
+	cd ${B}
+	cygconf \
+		--disable-gconf \
+		--disable-kconfig
+#		--with-qt-path=${QTDIR} \
+#		--with-kde-path=/usr
+	cygmake
+#		KCONFIG_FLAGS="-I/usr/include/kde -I${QINCLUDEDIR}"
+}
