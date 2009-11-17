@@ -1,7 +1,12 @@
-inherit qt3
-
+DESCRIPTION="Configuration settings library"
 HOMEPAGE="http://audacious-media-player.org/"
 SRC_URI="http://distfiles.atheme.org/${P}.tbz2"
+PATCH_URI="0.7.1-buildsys.patch"
+
+PKG_NAMES="${PN} ${PN}1 ${PN}-devel"
+libmcs_CONTENTS="usr/bin/mcs-*.exe usr/share/doc/"
+libmcs1_CONTENTS="usr/bin/cygmcs-1.dll usr/lib/mcs/"
+libmcs_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 
 NO_ACLOCAL=1
 
@@ -10,11 +15,6 @@ src_compile() {
 	cygautoreconf
 	lndirs
 	cd ${B}
-	cygconf \
-		--disable-gconf \
-		--disable-kconfig
-#		--with-qt-path=${QTDIR} \
-#		--with-kde-path=/usr
+	cygconf --disable-gconf --disable-kconfig
 	cygmake
-#		KCONFIG_FLAGS="-I/usr/include/kde -I${QINCLUDEDIR}"
 }

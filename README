@@ -1,0 +1,55 @@
+libmcs
+------------------------------------------
+mcs is a library and set of userland tools which abstract the storage of 
+configuration settings away from userland applications. Unlike other 
+similar projects, mcs strictly handles abstraction. It does not impose 
+any specific data storage requirement, nor is it tied to any desktop 
+environment or software suite.
+
+Runtime requirements:
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
+  libmowgli2-0.7.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.63-10
+  binutils-2.19.51-1
+  cygport-0.9.9-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  make-3.81-2
+  pkg-config-0.23b-10
+  sed-4.1.5-2
+
+Canonical website:
+  http://audacious-media-player.org/
+
+Canonical download:
+  http://distfiles.atheme.org/
+
+-------------------------------------------
+
+Build instructions:
+  unpack libmcs-0.7.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libmcs-0.7.1-X.cygport all
+
+This will create:
+  /usr/src/libmcs-0.7.1-X-src.tar.bz2
+  /usr/src/libmcs-0.7.1-X.tar.bz2
+  /usr/src/libmcs-devel-0.7.1-X.tar.bz2
+  /usr/src/libmcs1-0.7.1-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 0.7.1-1 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/

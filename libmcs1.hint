@@ -1,0 +1,9 @@
+category: Libs
+requires: libgcc1 libmowgli2
+external-source: libmcs
+sdesc: "Configuration settings library (runtime)"
+ldesc: "mcs is a library and set of userland tools which abstract the 
+storage of configuration settings away from userland applications. 
+Unlike other similar projects, mcs strictly handles abstraction. It does 
+not impose any specific data storage requirement, nor is it tied to any 
+desktop environment or software suite."
